@@ -1,0 +1,2 @@
+echo "Life is wonderfull"
+
