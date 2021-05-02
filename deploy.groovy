@@ -1,17 +1,17 @@
 pipeline {
-    agent any
+    agent { label 'slave'}
     stages {
         stage('Download Artifact from Nexus') {
             steps {
                 echo 'Downloading Artifactory from Nexus'
-                sh ''' wget -O jenkins_calci.war $ArticactID '''
+                sh ''' wget -O jenkins_calci.war $Artifactid '''
             }
         }
         stage('Undeploy the existing war from Tomcat')
         {
             steps
             {
-            sh 'curl "http://admin:admin@localhost:9090/manager/undeploy?path=/jenkins_calci"'
+            sh 'sudo rm -rf /opt/tomcat/apache-tomcat-9.0.8/webapps/jenkins_calci.war'
         }
         }
          stage('CoolOff Period')
@@ -25,7 +25,7 @@ pipeline {
         {
             steps
             {
-            sh 'curl -X POST --upload-file jenkins_calci.war "http://admin:admin@localhost:9090/manager/deploy?path=/jenkins_calci"'
+            sh 'sudo cp jenkins_calci.war /opt/tomcat/apache-tomcat-9.0.8/webapps/jenkins_calci.war'
         }
         }
     }

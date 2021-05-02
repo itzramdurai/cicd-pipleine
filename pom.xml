@@ -120,7 +120,7 @@
 		<repository>
 			<name>Nexus Snapshots</name>
 			<id>nexus</id>
-			<url>http://34.86.144.69:8081/repository/maven-snapshots/</url>
+			<url>http://52.25.213.226/repository/maven-snapshots/</url>
 		</repository>
 	</distributionManagement>
 </project>

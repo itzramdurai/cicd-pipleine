@@ -1,5 +1,7 @@
 pipeline {  
-    agent any  
+    agent {
+        label 'slave'
+    }  
     stages {  
         stage('Checkout Repository'){
             steps{
@@ -10,7 +12,7 @@ pipeline {
                         extensions: scm.extensions,
                         userRemoteConfigs: [[
                             url: 'git@gitlab.com:devopschef/jenkins/jenkinscicd.git',
-                            credentialsId: "master"
+                            credentialsId: "gitlab"
                             ]]
                         ])
                     }
