@@ -8,7 +8,6 @@ pipeline {
                 script {
                     try {
                         checkout([$class: 'GitSCM',
-                        branches: [[name: "master ]],
                         #branches: [[name: "origin/${env.gitlabSourceBranch}" ]],
                         extensions: scm.extensions,
                         userRemoteConfigs: [[
