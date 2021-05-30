@@ -7,7 +7,14 @@ pipeline {
             steps{
                 script {
                     try {
-                    git credentialsId: 'gitlab', url: 'https://gitlab.com/thedevopschef/cicd-pipleine.git'
+                        checkout([$class: 'GitSCM',
+                        branches: [[name: "origin/${env.gitlabSourceBranch}" ]],
+                        extensions: scm.extensions,
+                        userRemoteConfigs: [[
+                            url: 'git@gitlab.com:devopschef/jenkins/jenkinscicd.git',
+                            credentialsId: "gitlab"
+                            ]]
+                        ])
                     }
                     catch (Exception e) {
                         throw e
