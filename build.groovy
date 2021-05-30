@@ -1,6 +1,6 @@
 pipeline {  
     agent {
-        label 'slave'
+        label 'agent1'
     }  
     stages {  
         stage('Checkout Repository'){
