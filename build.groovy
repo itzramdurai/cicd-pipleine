@@ -33,7 +33,7 @@ pipeline {
                     echo "test successful";
                 } 
             }
-            stage ('Test') {  
+            stage ('Deploy') {  
                   steps{
                     sh 'mvn deploy'
                     echo "mvn deploy is successful";
