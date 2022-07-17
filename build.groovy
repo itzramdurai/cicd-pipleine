@@ -33,13 +33,6 @@ pipeline {
                     echo "test successful";
                 } 
             }
-       stage('Undeploy the existing war from Tomcat')
-        {
-            steps
-            {
-            sh 'sudo rm -rf /opt/tomcat/apache-tomcat-9.0.8/webapps/jenkins_calci.war'
-        }
-        }
           stage('Deploy the war to tomcat')
         {
             steps
