@@ -33,12 +33,6 @@ pipeline {
                     echo "test successful";
                 } 
             }
-            stage ('Deploy') {  
-                  steps{
-                    sh 'mvn deploy'
-                    echo "mvn deploy is successful";
-                } 
-            }
           stage('Deploy the war to tomcat')
         {
             steps
