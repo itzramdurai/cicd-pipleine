@@ -37,7 +37,7 @@ pipeline {
         {
             steps
             {
-            sh 'cp target/jenkins_calci-1.0-SNAPSHOT.war /opt/tomcat/apache-tomcat-9.0.8/webapps/jenkins_calci.war'
+            sh 'sudo cp target/jenkins_calci-1.0-SNAPSHOT.war /opt/tomcat/apache-tomcat-9.0.8/webapps/jenkins_calci.war'
         }
         }
     }
