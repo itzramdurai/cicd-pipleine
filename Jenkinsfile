@@ -1,5 +1,8 @@
 pipeline {  
     agent {label 'slave'}
+    tools {
+        maven 'maven-3.6.3' 
+    }
     stages {  
         stage('Checkout Repository'){
             steps{
@@ -13,17 +16,6 @@ pipeline {
                 }
             }
         }
-            stage ('Initialize') {
-                   steps {
-                       sh '''
-                       echo "PATH = ${PATH}"
-                        M2_HOME='/opt/apache-maven-3.6.3'
-                        PATH="$M2_HOME/bin:$PATH"
-                        export PATH
-                       echo "M2_HOME = ${M2_HOME}"
-                       '''
-                   }
-            }
             stage ('Compile') {  
                   steps{
                      sh 'mvn compile'
