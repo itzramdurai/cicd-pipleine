@@ -14,8 +14,16 @@ pipeline {
             }
         }
             stage ('Compile') {  
+                stage ('Initialize') {
+                    steps {
+                        sh '''
+                        echo "PATH = ${PATH}"
+                        echo "M2_HOME = ${M2_HOME}"
+                        '''
+                }
+            }
                   steps{
-                     mvn compile
+                     sh 'mvn compile'
                     echo "test successful";          
                 } 
             }
