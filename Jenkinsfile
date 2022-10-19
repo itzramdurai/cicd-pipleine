@@ -15,8 +15,7 @@ pipeline {
         }
             stage ('Compile') {  
                   steps{
-                    sh 'ls -lrt'
-                    sh 'mvn compile'
+                     mvn compile
                     echo "test successful";          
                 } 
             }
