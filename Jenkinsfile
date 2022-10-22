@@ -8,7 +8,7 @@ pipeline {
             steps{
                 script {
                     try {
-                    git credentialsId: 'gitlab', url: 'https://gitlab.com/thedevopschef/cicd-pipleine.git'
+                    git url: 'https://github.com/itzramdurai/cicd-pipleine.git'
                     }
                     catch (Exception e) {
                         throw e
