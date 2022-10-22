@@ -1,4 +1,4 @@
-# What we will do?
+# What we will test do?
 
 ### We will develop a basic maven web application in Java using DevOps tools like Apache Maven as a build tool, GitHub for source code management, Selenium for testing, Jenkins for Continuous integration and Apache Tomcat for deployement and use jenkins plugin to monitor our pipeline.
 
